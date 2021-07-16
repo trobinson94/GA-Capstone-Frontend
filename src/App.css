@@ -35,7 +35,11 @@ header nav div:hover {
   padding: 50px;
 }
 
-.auth form input {
+.auth form input,
+.blogform form input,
+button,
+.contact-form input,
+.contact-form textarea {
   background-color: salmon;
   color: white;
   padding: 8px;
@@ -44,4 +48,19 @@ header nav div:hover {
   margin: 10px auto;
   text-align: center;
   font-size: 1.2em;
+}
+
+/* ///////////
+// Dashboard
+//////////// */
+
+.dashboard {
+  text-align: center;
+}
+
+.dashboard .post {
+  text-align: center;
+  width: 80%;
+  margin: 10px auto;
+  border: 3px solid salmon;
 }

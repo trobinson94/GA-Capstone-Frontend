@@ -26,7 +26,7 @@ const Dashboard = (props) => {
     const loaded = () => {
         return (
             <div class="dashboard">
-                <Link to="/dashboard/new">
+                <Link to="/dashboard/:action">
                     <button>Create New Blog Post</button>
                 </Link>
                 <Route 
@@ -35,9 +35,22 @@ const Dashboard = (props) => {
                 />
                     <ul>
                         {state.posts.map((post) => (
-                            <div key={post.id}>
+                            <div className="post" key={post.id}>
                                 <h2>{post.title}</h2>
                                 <h4>{post.body}</h4>
+                                <button onClick={() => {
+                                    dispatch({type: "select", payload: post})
+                                    props.history.push("/dashboard/edit")
+                                }}>Edit Note</button>
+                                <button onClick={() => {
+                                   fetch(url + "/posts/" + post.id, {
+                                       method: "delete",
+                                       headers: {
+                                        Authorization: "bearer " + token
+                                    }
+                                   })
+                                   .then(() => getPosts());
+                                }}>Delete Note</button>
                             </div>
                         ))}
                     </ul>

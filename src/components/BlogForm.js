@@ -10,7 +10,7 @@ const BlogForm = (props) => {
 
     const actions = {
         new: () => {
-            return fetch(state.url + "/posts", {
+            return fetch(state.url + "/posts/", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",
