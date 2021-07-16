@@ -3,16 +3,23 @@ import React, { useContext, useReducer } from "react";
 /// Initial State
 
 const initialState = {
-    url: "http://blogspec-api.herokuapp.com"
+    url: "http://blogspec-api.herokuapp.com",
+    token: null,
+    username: null
 }
 
 /// Reducer
 
 const reducer = (state, action) => {
-
-    switch(action.type){
+    let newState;
+    switch (action.type) {
+        case "auth":
+            newState = { ...state, ...action.payload };
+            return newState;
+            break;
         default:
-            return state
+            return state;
+            break;
     }
 }
 
