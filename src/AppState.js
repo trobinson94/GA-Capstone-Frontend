@@ -5,7 +5,17 @@ import React, { useContext, useReducer } from "react";
 const initialState = {
     url: "http://blogspec-api.herokuapp.com",
     token: null,
-    username: null
+    username: null,
+    posts: null,
+    new: {
+        title: "",
+        body: ""
+    },
+    edit: {
+        id: 0,
+        title: "",
+        body: ""
+    },
 }
 
 /// Reducer
@@ -21,6 +31,11 @@ const reducer = (state, action) => {
             newState = {...state, token: null, username: null};
             window.localStorage.removeItem("auth");
             return newState;
+            break;
+        case "getPosts":
+            newState = {...state, posts: action.payload}
+            return newState;
+            break;
         default:
             return state;
             break;
@@ -37,9 +52,11 @@ export const AppState = (props) => {
 
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    return <AppContext.Provider value={{state, dispatch}}>
-        {props.children}
-    </AppContext.Provider>
+    return (
+        <AppContext.Provider value={{state, dispatch}}>
+            {props.children}
+        </AppContext.Provider>
+    );
 };
 
 /// useAppState Hook
