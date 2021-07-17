@@ -44,7 +44,7 @@ const Dashboard = (props) => {
                                     onClick={() => {
                                         dispatch({type: "select", payload: post})
                                         props.history.push("/dashboard/edit")
-                                }}>Edit Note</button>
+                                }}>Edit Post</button>
                                 <button 
                                     className="options"
                                     onClick={() => {
@@ -55,7 +55,7 @@ const Dashboard = (props) => {
                                     }
                                    })
                                    .then(() => getPosts());
-                                }}>Delete Note</button>
+                                }}>Delete Post</button>
                             </div>
                         ))}
                     </ul>
