@@ -6,10 +6,11 @@ const Nav = (props) => {
 
     const {state, dispatch} = useAppState()
 
-    return <header>
-        <h1>Blogspec</h1>
+    return (
+    <header>
+        <h1 className="logo">BlogSpec</h1>
+        <div className="nav">
         <nav>
-            
             {!state.token ? (<>
             <Link to="/"><div>Home</div></Link>
             <Link to="/auth/signup">
@@ -33,7 +34,8 @@ const Nav = (props) => {
              </> : null}
             
         </nav>
-    </header>
+        </div>
+    </header>)
 }
 
 export default Nav

@@ -2,6 +2,8 @@ import React from "react";
 import {useAppState} from "../AppState";
 import { Route, Link } from "react-router-dom";
 import BlogForm from "../components/BlogForm";
+import moment from "moment";
+
 
 const Dashboard = (props) => {
 
@@ -24,6 +26,8 @@ const Dashboard = (props) => {
     }, []);
 
     const loaded = () => {
+        const date = moment().local(state.posts.created_at).format("dddd, MMMM Do YYYY, h:mm a");
+
         return (
             <div class="dashboard">
                 <Link to="/dashboard/:action">
@@ -37,6 +41,7 @@ const Dashboard = (props) => {
                         {state.posts.map((post) => (
                             <div className="post" key={post.id}>
                                 <h2>{post.title}</h2>
+                                <p>{date}</p>
                                 <h4>{post.body}</h4>
                                 <button onClick={() => {
                                     dispatch({type: "select", payload: post})

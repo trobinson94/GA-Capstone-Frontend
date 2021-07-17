@@ -25,6 +25,7 @@ const App = (props) => {
     
     return (
         <> 
+            <section>
             <Route path="/" component={Nav} />
             <Switch>
                 <Route exact path="/" component={Home}/>
@@ -34,6 +35,7 @@ const App = (props) => {
                 <Route path="/posts/:action" component={BlogForm}/>
                 <Route path="/contact" component={Contact}/>
             </Switch>
+            </section>
         </>
     );
 };

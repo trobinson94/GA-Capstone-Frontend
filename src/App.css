@@ -1,5 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: url('https://i.imgur.com/pJvBv72.jpg')no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 header {
-  text-align: center;
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 header nav {
@@ -7,9 +34,89 @@ header nav {
   justify-content: space-around;
 }
 
-header nav a {
-  color: black;
+header .logo {
+  position: relative;
+  color: white;
+  font-size: 35px;
   text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding-right: 750px;
+}
+
+header nav a{
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 2px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+  transition-property: all;
+}
+
+header nav a:not(:last-child){
+  margin-right: 30px;
+}
+
+header nav a:hover{
+  background: #fff;
+}
+
+.content {
+  max-width: 650px;
+  margin: 60px 100px;
+}
+
+.content .info h2{
+  color: white;
+  font-size: 55px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 60px;
+  /* margin-bottom: 30px; */
+}
+
+.content .info h3 {
+  color: #3d103f;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.content .info p{
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.content .info-btn{
+  color: #fff;
+  background: #3d103f;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 20px 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+  width: 200px;
+  margin: 20px;
+  text-align: center;
+  /* transition-property: background; */
+}
+
+.content .info-btn:hover{
+  background: #0C4F60;
+}
+
+
+
+/* header nav {
+  display: flex;
+  justify-content: space-around;
 }
 
 header nav div {
@@ -25,7 +132,7 @@ header nav div {
 header nav div:hover {
   background-color: lightgrey;
   color: salmon;
-}
+} */
 
 /* ///////////
 // Auth
