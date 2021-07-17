@@ -32,7 +32,9 @@ const App = (props) => {
                 <Route path="/auth/:form" component={Auth}/> 
                 <Route path="/dashboard" component={Dashboard}/> 
                 <Route path="/posts/:id" component={Post}/> 
-                <Route path="/posts/:action" component={BlogForm}/>
+                {/* <Route path="/posts/:action" component={BlogForm}/> */}
+                <Route path="/posts/new" component={BlogForm}/>
+                <Route path="/posts/edit" component={BlogForm}/>
                 <Route path="/contact" component={Contact}/>
             </Switch>
             </section>

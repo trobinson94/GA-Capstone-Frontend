@@ -7,6 +7,13 @@ const initialState = {
     token: null,
     username: null,
     posts: null,
+    email: null,
+    firstname: null,
+    lastname: null,
+    img: null,
+    bio: null,
+    location: null,
+    social: null,
     new: {
         title: "",
         body: ""

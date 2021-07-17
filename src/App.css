@@ -11,6 +11,7 @@ section {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -68,14 +69,20 @@ header nav a:hover{
   margin: 60px 100px;
 }
 
-.content .info h2{
+.content .info h2 {
   color: white;
   font-size: 55px;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 2px;
   line-height: 60px;
-  /* margin-bottom: 30px; */
+}
+
+.contact {
+  margin: auto;
+  color: white;
+  font-size: 35px;
+  margin-bottom: 10px;
 }
 
 .content .info h3 {
@@ -105,34 +112,8 @@ header nav a:hover{
   width: 200px;
   margin: 20px;
   text-align: center;
-  /* transition-property: background; */
 }
 
-.content .info-btn:hover{
-  background: #0C4F60;
-}
-
-
-
-/* header nav {
-  display: flex;
-  justify-content: space-around;
-}
-
-header nav div {
-  font-size: larger;
-  background-color: darksalmon;
-  color: white;
-  width: 150px;
-  border-radius: 7px;
-  transition: background-color .2s, color .2s;
-  padding: 10px;
-}
-
-header nav div:hover {
-  background-color: lightgrey;
-  color: salmon;
-} */
 
 /* ///////////
 // Auth
@@ -146,9 +127,11 @@ header nav div:hover {
 .blogform form input,
 button,
 .contact-form input,
-.contact-form textarea {
-  background-color: salmon;
-  color: white;
+.contact-form textarea,
+.blogform form textarea,
+.contact-form {
+  background-color:  white;
+  color:  #3d103f;
   padding: 8px;
   border-radius: 5px;
   display: block;
@@ -157,17 +140,81 @@ button,
   font-size: 1.2em;
 }
 
+.blogform form input,
+.blogform form textarea,
+.contact-form input,
+.contact-form textarea {
+  width: 600px;
+}
+
+.contact-form {
+  padding: 20px;
+}
+
+textarea {
+  height: 200px;
+}
+
 /* ///////////
 // Dashboard
 //////////// */
 
 .dashboard {
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: #3d103f83;
+  height: 100vh;
+  color: white;
+  overflow: auto;
 }
 
 .dashboard .post {
   text-align: center;
   width: 80%;
   margin: 10px auto;
-  border: 3px solid salmon;
+  padding: 15px;
+}
+
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+.rightcolumn {
+  float: right;
+  width: 25%;
+  padding-left: 20px;
+}
+
+.userimg {
+  background: url('https://i.imgur.com/UZmjebX.jpeg');
+  width: 100%;
+  padding: 20px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.418);
+  margin: 20px;
+  padding: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+
+  .logo {
+    display: none;
+  }
 }

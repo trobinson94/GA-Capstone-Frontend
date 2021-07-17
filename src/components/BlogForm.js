@@ -47,13 +47,15 @@ const BlogForm = (props) => {
     return (
         <div className="blogform">
             <form onSubmit={handleSubmit}>
+                <label for="title">Title</label>
                 <input 
                     type="text" 
                     name="title" 
                     value={formData.title} 
                     onChange={handleChange} 
                 />
-                <input 
+                <label for="body">Body</label>
+                <textarea 
                     type="text" 
                     name="body" 
                     value={formData.body} 

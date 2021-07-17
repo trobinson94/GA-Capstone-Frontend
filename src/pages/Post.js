@@ -13,8 +13,8 @@ const Post = (props) => {
 
     return (
         <div>
-            <h2>{post.title}</h2>
-            <h3>{post.body}</h3>
+            <h2>{state.post.title}</h2>
+            <h3>{state.post.body}</h3>
 
            
             <button>Edit Post</button>

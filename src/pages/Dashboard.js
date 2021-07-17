@@ -8,7 +8,7 @@ import moment from "moment";
 const Dashboard = (props) => {
 
     const {state, dispatch} = useAppState();
-    const {token, url, posts, username} = state;
+    const {token, url, posts, email, firstname} = state;
 
     const getPosts = async () => {
         const response = await fetch(url + "/posts/", {
@@ -30,22 +30,19 @@ const Dashboard = (props) => {
 
         return (
             <div class="dashboard">
-                <Link to="/dashboard/:action">
-                    <button>Create New Blog Post</button>
-                </Link>
-                <Route 
-                    path="/dashboard/:action" 
-                    render={(rp) => <BlogForm {...rp} getPosts={getPosts}/> } 
-                />
+                <div className="row">
+                <div className="leftcolumn">
+                    <div className="card">
                     <ul>
                         {state.posts.map((post) => (
                             <div className="post" key={post.id}>
                                 <h2>{post.title}</h2>
                                 <p>{date}</p>
                                 <h4>{post.body}</h4>
-                                <button onClick={() => {
-                                    dispatch({type: "select", payload: post})
-                                    props.history.push("/dashboard/edit")
+                                <button 
+                                    onClick={() => {
+                                        dispatch({type: "select", payload: post})
+                                        props.history.push("/dashboard/edit")
                                 }}>Edit Note</button>
                                 <button onClick={() => {
                                    fetch(url + "/posts/" + post.id, {
@@ -59,6 +56,29 @@ const Dashboard = (props) => {
                             </div>
                         ))}
                     </ul>
+
+                    <Link to="/dashboard/new">
+                        <button>Create New Blog Post</button>
+                    </Link>
+                    <Route 
+                        path="/dashboard/:action" 
+                        render={(rp) => <BlogForm {...rp} getPosts={getPosts}/> } 
+                    />
+                    </div>
+                    </div>
+
+                    <div className="rightcolumn">
+                        <div className="card">
+                        <div class="userimg"></div>
+                            <h2>Tani</h2>
+                            <h5>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Phasellus nec iaculis mauris. 
+                                Proin vestibulum commodo elit a efficitur. Cras pulvinar dignissim interdum. Nulla congue magna sed lorem blandit gravida. Fusce pellentesque ultrices tempus. Ut eu nibh a erat molestie malesuada eu ac metus. Cras vehicula mauris nisl, ut hendrerit elit accumsan non. Pellentesque orci magna, ultricies nec vestibulum id, tempor tempor eros
+                            </h5>
+                    </div>
+                    </div>
+                </div>
             </div>
     )}
 
