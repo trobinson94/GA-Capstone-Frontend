@@ -40,15 +40,18 @@ const Dashboard = (props) => {
                                 <p className="date">{date}</p>
                                 <h4>{post.body}</h4>
                                 <button 
+                                    className="options"
                                     onClick={() => {
                                         dispatch({type: "select", payload: post})
                                         props.history.push("/dashboard/edit")
                                 }}>Edit Note</button>
-                                <button onClick={() => {
-                                   fetch(url + "/posts/" + post.id, {
-                                       method: "delete",
-                                       headers: {
-                                        Authorization: "bearer " + token
+                                <button 
+                                    className="options"
+                                    onClick={() => {
+                                        fetch(url + "/posts/" + post.id, {
+                                            method: "delete",
+                                            headers: {
+                                                Authorization: "bearer " + token
                                     }
                                    })
                                    .then(() => getPosts());

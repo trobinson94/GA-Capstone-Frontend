@@ -239,6 +239,11 @@ p {
   color: #3d103f;
 }
 
+.options {
+  display:inline-block;
+  margin: 10px; 
+}
+
 @media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn {
     width: 100%;
