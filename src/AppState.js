@@ -3,7 +3,7 @@ import React, { useContext, useReducer } from "react";
 /// Initial State
 
 const initialState = {
-    url: "http://blogspec-api.herokuapp.com",
+    url: "https://blogspec-api.herokuapp.com",
     token: null,
     username: null,
     posts: null,
