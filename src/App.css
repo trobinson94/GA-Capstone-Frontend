@@ -45,7 +45,8 @@ header .logo {
   padding-right: 750px;
 }
 
-header nav a{
+header nav a,
+.logout {
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -60,7 +61,8 @@ header nav a:not(:last-child){
   margin-right: 30px;
 }
 
-header nav a:hover{
+header nav a:hover,
+.logout:hover {
   background: #fff;
 }
 
@@ -120,7 +122,13 @@ header nav a:hover{
 //////////// */
 
 .auth form {
-  padding: 50px;
+  padding: 50px; 
+  background-color: rgba(255, 255, 255, 0.418);
+  width: 600px;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  border-radius: 20px;
 }
 
 .auth form input,
@@ -149,10 +157,17 @@ button,
 
 .contact-form {
   padding: 20px;
+  border-radius: 20px;
 }
 
 textarea {
   height: 200px;
+}
+
+label {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
 }
 
 /* ///////////
@@ -167,6 +182,7 @@ textarea {
   height: 100vh;
   color: white;
   overflow: auto;
+  border-radius: 20px;
 }
 
 .dashboard .post {
@@ -194,18 +210,33 @@ textarea {
   height: 400px;
   background-size: cover;
   background-position: center;
+  border-radius: 20px;
 }
 
 .card {
   background-color: rgba(255, 255, 255, 0.418);
   margin: 20px;
   padding: 20px;
+  border-radius: 20px;
 }
 
 .row:after {
   content: "";
   display: table;
   clear: both;
+}
+
+h2, 
+h3,
+h5,
+p {
+  margin: 10px;
+}
+
+.subtitle,
+.date {
+  margin: 5px;
+  color: #3d103f;
 }
 
 @media screen and (max-width: 800px) {

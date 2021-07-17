@@ -37,7 +37,7 @@ const Dashboard = (props) => {
                         {state.posts.map((post) => (
                             <div className="post" key={post.id}>
                                 <h2>{post.title}</h2>
-                                <p>{date}</p>
+                                <p className="date">{date}</p>
                                 <h4>{post.body}</h4>
                                 <button 
                                     onClick={() => {
@@ -71,6 +71,8 @@ const Dashboard = (props) => {
                         <div className="card">
                         <div class="userimg"></div>
                             <h2>Tani</h2>
+                            <p class="subtitle is-6">@tanirob</p>
+                            <p class="subtitle is-6">Queens, NY</p>
                             <h5>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Phasellus nec iaculis mauris. 
@@ -79,6 +81,7 @@ const Dashboard = (props) => {
                     </div>
                     </div>
                 </div>
+
             </div>
     )}
 

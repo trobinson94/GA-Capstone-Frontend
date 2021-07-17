@@ -36,6 +36,7 @@ const App = (props) => {
                 <Route path="/posts/new" component={BlogForm}/>
                 <Route path="/posts/edit" component={BlogForm}/>
                 <Route path="/contact" component={Contact}/>
+                <Route path="/profile" component={Auth}/>
             </Switch>
             </section>
         </>

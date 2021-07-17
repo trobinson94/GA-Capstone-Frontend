@@ -25,7 +25,8 @@ const Nav = (props) => {
             <Link to="/contact"><div>Contact</div></Link>
             <Link to="/profile"><div>Edit Profile</div></Link>
             <div 
-            onClick={() => {
+                className="logout"
+                onClick={() => {
                 dispatch({type: "logout"}) 
                 props.history.push("/")
             }}>
